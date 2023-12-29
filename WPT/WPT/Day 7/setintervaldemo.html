@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function displaydate(){
+            var dt=new Date();
+            document.getElementById("myp").innerHTML=dt;
+        }
+ 
+    </script>
+</head>
+<body>
+    <p id="myp"></p>
+    <script>
+        //displaydate();
+        //delays the function execution by given time period, 
+        //gets executed only once
+       // setTimeout(displaydate,1000);
+
+       //it calls the display date function after every 1000ms, 
+       //till we use clearInterval
+       console.log("before set interval")
+       var t1=setInterval(displaydate,1000)
+       console.log("after set interval")
+       //alert("testing ")
+       function cleartimer(){
+           clearInterval(t1)
+       }
+    </script>
+    <button type="button" name="btn" id="btn" value="btn" onclick="cleartimer()">Clear Interval</button>
+</body>
+</html>

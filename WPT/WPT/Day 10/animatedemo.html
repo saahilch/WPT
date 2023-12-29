@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: cyan;
+            border:2px solid red;
+            border-radius: 20px;
+            height:300px;
+            width:300px;
+            margin:10px
+        }
+    </style>
+    <script src="./jquery.js"></script>
+    <!-- add following file if you want to see the color changes in animate function -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-color-animation@1.5.1/jquery.animate-colors-min.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+             $('#animate').click(function(){
+                $('#div1').animate({
+                "backgroundColor":"#400101","color":"#E4D8B8","margin-left":"100px"},1000)
+             })
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="animate" id="animate" value="animate">Animate</button>
+
+    <br/>
+    <div id="div1">
+        This is div1
+        <img src="../images/flowers.png" height="200px" width="200px"></img>
+    </div>
+    <div id="div2">
+        This is div2
+       
+    </div>
+
+</body>
+</html>

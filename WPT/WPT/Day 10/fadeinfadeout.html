@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: cyan;
+            border:2px solid red;
+            border-radius: 20px;
+            height:300px;
+            width:300px;
+            margin:10px
+        }
+    </style>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+              $('#fadein').click(function(){
+                  $("#div1").fadeIn(1000,function(){
+                    console.log("fadeIn div1 completed")
+                  }) 
+                  $("#div2").fadeOut(1000,function(){
+                    console.log("fadeOut div2  completed")
+                  })   
+              })
+              $('#fadeout').click(function(){
+                  $("#div1").fadeOut(1000,function(){
+                    console.log("fadeOut div1 completed")
+                  }) 
+                  $("#div2").fadeIn(1000,function(){
+                    console.log("slideup div2  completed")
+                  })   
+              }) 
+              $('#fadeto').click(function(){
+                  $("#div1").fadeTo(1000,0.3,function(){
+                    console.log("fadeTo div1 completed")
+                  }) 
+                  $("#div2").fadeTo(1000,0.5);   
+              }) 
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="fadein" id="fadein" value="fadein">fadein</button>
+
+    <button type="button" name="fadeout" id="fadeout" value="fadeout">fadeout</button>
+    <button type="button" name="fadeto" id="fadeto" value="fadeTo">fadeTo</button><br/>
+    <div id="div1">
+        This is div1
+        <img src="../images/flowers.png" height="200px" width="200px"></img>
+    </div>
+    <div id="div2">
+        This is div2
+       
+    </div>
+
+</body>
+</html>

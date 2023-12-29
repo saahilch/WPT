@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script>
+        //javascript way of writing code 
+        //referjquerydemo3 to read jquery style
+        function myf2(){
+            //alert("in myf2");
+            var arr=document.getElementsByTagName('p');
+            for(var i=0;i<arr.length;i++){
+                arr[i].addEventListener('mouseover',myf1)
+                
+            }
+          
+        }
+        function myf1(){
+            //document.getElementById('myp').style="color:red"
+           // alert("myf1 called")
+            var arr=document.getElementsByTagName('p');
+            for(var i=0;i<arr.length;i++){
+                arr[i].style="color:red";
+            }
+            displaydata();
+        }
+
+        function displaydata(){
+            var arr=document.getElementsByTagName('p');
+            for(var i=0;i<arr.length;i++){
+                alert(arr[i].innerHTML);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div>
+        <p id="myp" >this is para 1</p>
+        <p>this is para 2</p>
+        <p>this is para 3</p>
+    </div>
+    <script>
+        myf2();
+    </script>
+</body>
+</html>

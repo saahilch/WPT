@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('p').each(function(index,element){
+                alert(index+": "+$(element).html())
+
+            })
+            $('p').hover(function(){
+                $(this).css({"color":"red","border":"2px solid red"})
+            },function(){
+                $(this).css("color","black")
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <p id="myp" >this is para 1</p>
+        <p>this is para 2</p>
+        <p>this is para 3</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position:absolute;
+            top:30px;
+            left:200px;
+            z-index:2;
+        }
+        img{
+            z-index:1;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/flowers.png" width="300px" height="200"></img>
+    <div>
+    <table border="2" bgcolor="cyan" cellspacing="5px" cellpadding="10px">
+        <caption align="bottom">This is table 1</caption>
+        <tr>
+            <th colspan="4">Product Details</th>
+        </tr>
+        <tr bgcolor="blue">
+            <th>product id</th>
+            <th>product name</th>
+            <th>product quantity</th>
+            <th>product price</th>
+        </tr>
+        <tr>
+            <td bgcolor="pink" align="center" valign="top" rowspan="2">10</td>
+            <td>Chair</td>
+            <td>45</td>
+            <td>4000.00 Rs</td>
+        </tr>
+        <tr>
+            
+            <td>Table</td>
+            <td>50</td>
+            <td>5000.00 Rs</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>shelf</td>
+            <td>34</td>
+            <td>2000.00 Rs</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

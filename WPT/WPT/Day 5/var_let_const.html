@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i=23;
+        let x1=67;
+        function test(){
+            var i=45;
+            let y=56;
+            if(i>10){
+                var d=45;
+                let f=40;
+            }
+            console.log(d);
+            console.log("f: "+f); //error
+            var a=10;
+            console.log("inside function: "+i+","+a);
+        }
+        test()
+        console.log("outside function: "+i)
+
+        let x=34;
+        //error redeclaration is not allowed
+       //let x=67;  
+        alert(i);
+       
+        console.log(i);
+       
+        console.log("value of j "+j);
+        var j=78;
+       
+        console.log("value of p "+p);
+        let p=78;
+        const c=56;
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- get method sends data via query string
+    post method sends data via body -->
+    <!-- action will tell the file to which the data should be send -->
+    <form action="file1" method="get">
+        <table>
+        <tr>
+            <td><label>user name :</label> </td>
+            <td><input type="text" name="uname" id="uname" autofocus placeholder="enter username" required  minlength="3" maxlength="8" pattern="^[A-Za-z].*"></td>
+        </tr>
+        <tr>
+            <td>Password :</td>
+            <td><input type="password" name="pass" id="pass" placeholder="enter password" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><!--<input type="submit" name="btn" id="btn" value="login"/>-->
+                <!-- submit button submits data to server -->
+                <button type="submit" name="btn" id="login" value="login">Login</button>
+                <!-- reset button clears the form -->
+                <button type="reset" name="btn" id="cancel" value="cancel">Cancel</button>
+            </td>
+        
+    </tr>
+    </table>
+    </form>
+    <a href="forgotpassform.html">forgot password</a>&nbsp;&nbsp;
+    <a href="registerform.html">Register me</a>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <script>
+        names=["Rajan","Madhura","Shiva","Prasad","Sameer","Sonali"];
+        searcharr=[...names];
+        //display all the names from the array in unordered list in 
+        //the div
+        var displaylist=()=>{
+            var str="<ul>"
+            for(var nm of searcharr){
+               str+=`<li>${nm}</li>`
+            }    
+            str+="<ul>";
+            $("#mydiv").html(str);    
+        }
+        $(document).ready(function(){
+
+            displaylist();
+            $('#search').keyup(function(event){
+                //retrieve the value of search text box
+                var search=$('#search').val();
+                console.log("search text : ",search);
+
+                if(search!==""){
+                    //find all names which contains the searchtext, 
+                    //if it is not empty
+                    searcharr=names.filter(a=>a.includes(search));
+                }else{
+                    //if searchtext is empty copy names array into searcharr
+                    searcharr=[...names];
+                }
+                displaylist();
+            })
+        })
+
+    </script>
+</head>
+<body>
+    Search: <input type="text" name="search" id="search">
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

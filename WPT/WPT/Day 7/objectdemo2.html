@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/objectdemo.js"></script>
+    <script>
+        emparr=[new Employee(1,'Swapnali','3333','hr','associate'),
+    new Employee(2,'sunil','4444','admin','sr. manager')];
+    function displayTable(){
+        var str=`<table border='2'><tr><th>Employee id</th><th>Name</th><th>mobile</th><th>Department</th><th>Designation</th></tr>`;
+            for(var emp of emparr){
+                str+=`<tr><td>${emp.id}</td><td>${emp.name}</td><td>${emp.mobile}</td><td>${emp.dept}</td><td>${emp.desg}</td></tr>`
+            }
+            str+="</table>";
+            document.getElementById("mydiv").innerHTML=str;
+    }
+    function clearform(){
+       document.getElementById("id").value="";
+        document.getElementById("name").value="";
+        document.getElementById("mob").value="";
+       document.getElementById("dept").value="";
+        document.getElementById("desg").value="";
+        document.getElementById("id").focus();
+    }
+    function addemp(){
+        var id=document.getElementById("id").value;
+        var name=document.getElementById("name").value;
+        var mob=document.getElementById("mob").value;
+        var dept=document.getElementById("dept").value;
+        var desg=document.getElementById("desg").value;
+        var e=new Employee(id,name,mob,dept,desg);
+        emparr.push(e);
+        displayTable();
+        clearform();
+
+    }
+
+    function deleteEmployee(){
+        var id=document.getElementById("id").value;
+        var pos=emparr.findIndex(a=>a.id===id);
+        if(pos!==-1){
+          emparr.splice(pos,1);
+          displayTable();
+          document.getElementById("id").value="";
+          document.getElementById("id").focus();
+        }else{
+            alert("employee not found");
+        }
+
+    }
+    function modifyemp(){
+        var id=document.getElementById("id").value;
+        var pos=emparr.findIndex(a=>a.id===id);
+        if(pos!==-1){
+          var newdept=prompt("enter new department")  
+          var newdesg=prompt("enter new designation")
+          emparr[pos].dept=newdept;
+          emparr[pos].desg=newdesg;
+          displayTable();
+          document.getElementById("id").value="";
+          document.getElementById("id").focus();
+        }else{
+            alert("employee not found");
+        }
+    } 
+
+    </script>
+</head>
+<body onload="displayTable()">
+    <form>
+        Employee id: <input type="text" name="id" id="id"><br/>
+        Employee Name: <input type="text" name="name" id="name"><br/>
+        Employee Mobile: <input type="text" name="mob" id="mob"><br/>
+        Department: <input type="text" name="dept" id="dept"><br/>
+        Designation: <input type="text" name="desg" id="desg"><br/>
+        <button type="button" name="btn" id="add" value="add" onclick="addemp()">Add Employee</button>
+        <button type="button" name="btn" id="del" value="del" onclick="deleteEmployee()">Delete Employee</button>
+        <button type="button" name="btn" id="modify" value="modify" onclick="modifyemp()">Modify Employee</button>
+        <button type="reset" name="reset" id="reset" value="reset">Cancel</button>
+    </form><br/><br/>
+    <div id="mydiv">
+
+    </div>
+    
+</body>
+</html>

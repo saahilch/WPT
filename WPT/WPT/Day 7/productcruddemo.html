@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/productcrud.js"></script>
+ 
+</head>
+<body onload="displayProductlist()">
+    <form>
+        Product Name : <input type="text" name="pname" id="pname"><span id="errname"></span><br/>
+        <button type="button" name="btn" id="btn" value="add" onclick="addproduct()">Add Product</button>
+        <button type="button" name="btn" id="btn1" value="Delete" onclick="deleteproduct()">Delete Product</button>
+        <button type="button" name="btn" id="btn2" value="modify" onclick="modifyproduct()">Modify Product</button>
+        <button type="reset" name="btn" id="btn3" value="reset">Cancel</button>
+        <div id="mydiv">
+           
+        </div>
+    </form>
+</body>
+</html>

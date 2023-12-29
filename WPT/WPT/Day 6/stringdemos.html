@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function findresult(){
+            var op=document.getElementById("op").selectedIndex;
+            var val=document.getElementById("op").options[op].value;
+            var str=document.getElementById("str").value;
+            switch(val){
+                case "upper":
+                    var result=str.toUpperCase();
+                    break;
+                case "lower":
+                    var result=str.toLowerCase();
+                    break;
+                case "substring":
+                    var result=str.substring(3,10);  //start index, end index
+                    //end index is excluded
+                    break;
+                case "split":
+                    var delim=prompt("enter delimiter")
+                    var result=str.split(delim);  //start index, end index
+                    console.log(result)
+                    //end index is excluded
+                    break;
+                case "indexof":
+                    var substr=prompt("enter substring to check indexof")
+                    var result=str.indexOf(substr);
+                    break;
+                case "search":
+                    //var substr=prompt("enter substring to check search")
+                    var result=str.search(/p.*in/ig);
+                    break
+                case "replace":
+                    //var substr=prompt("enter substring to check search")
+                    //g indicates globally, so will replace all occurances,
+                    // if g is removed then it will replace only first occurence
+                    //i is ignore case
+                    var result=str.replace(/in/ig,"xxxxxxx");
+                    break
+                case "replaceAll":
+                    //var substr=prompt("enter new substring to overwrite")
+                    //g indicates globally, it is manditory, it will replace all occurances,
+                    //if g is not given then it will not work
+                   //i is ignore case
+                    var result=str.replaceAll(/in/ig,"xxxxxxx");
+                    break
+                case "startswith":
+                    var substr=prompt("enter substring to check startswith")
+                    var result=str.startsWith(substr);
+                    break;
+                case "endswith":
+                    var substr=prompt("enter substring to check endswith")
+                    var result=str.endsWith(substr);
+                    break;
+
+            }
+            document.getElementById("result").value=result;
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+       String : <input type="text" name="str" id="str">
+       Result : <input type="text" name="result" id="result" readonly>
+       <select name="operation" id="op">
+          <option value="upper" selected>uppercase</option>
+          <option value="lower">lowercase</option>
+          <option value="substring">substring</option>
+          <option value="split">split</option>
+          <option value="indexof">indexof</option>
+          <option value="search">search</option>
+          <option value="replace">replace</option>
+          <option value="replaceAll">replaceAll</option>
+          <option value="startswith">startswith</option>
+          <option value="endswith">endswith</option>
+       </select>
+       <button type="button" name="btn" id="btn" onclick="findresult()">Find result</button>
+       <button type="reset" name="calcel" id="calcel">clear all</button>
+       <div>
+        to check regular expression exists / not then use test function
+        <script>
+            /in/i.test("rain");   //true
+            /in/i.test("pattern check")  //false
+        </script>
+        
+       </div>
+    </form>
+</body>
+</html>

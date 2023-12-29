@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes animation1 {
+            from{
+                background-color: cyan;
+                left:100px;
+                top:20px;
+                width:300px
+            }
+            to{
+                background-color: pink;
+                left:50px;
+                top:0px;
+                width:200px 
+            }
+            
+        }
+        @keyframes animation2 {
+            10%{background-color: red;
+            color:blue;
+            margin-left:20px }
+            20%{
+                background-color: green;
+            color:blue;
+            margin-left:40px;
+            width:300px;
+            }
+            50%{background-color: blue;
+            color:white;
+            margin-left:80px;
+            width:300px;}
+            60%{background-color: black;
+            color:white;
+            margin-left:80px;
+            width:300px;}
+            100%{
+                background-color: purple;
+            color:white;
+            margin-left:10px;
+            width:200px;
+            }
+            
+        }
+        div{
+            position:relative;
+            background-color: aquamarine;
+            border:2px solid green;
+            border-radius:10px;
+            width:100px;
+            height:100px;
+            animation:animation2;
+            /* after how much time the animation should start */
+            animation-delay: 4s;
+            /* within how much time the animation should complete */
+            animation-duration: 4s;
+            /* the number of times animation should work */
+            animation-iteration-count: 2;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        This is animated div
+    </div>
+</body>
+</html>

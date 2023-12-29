@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+     var ob={id:12,name:'xxx',mobile:'yyy'};
+     //value of id property will be stored in pid variable
+     //and name property will get stored in nm variable
+     var {id:pid,name:nm}=ob;
+     console.log(pid,nm)
+
+     //object destructuring with default value
+     let {id,name,mobile='3333'}=ob;
+     sid=12;
+     sname='yyyy';
+     marks=89;
+
+     //s={sid:sid,sname:sname,marks:marks}
+     //if property name and variable name is same then use following syntax
+     s={sid,sname,marks}
+     emp={eid:12,ename:'Rajan',dept:{dno:23,dname:'HR'}}
+     //to store dno and dname property values, in dno and dname variable
+     let{
+        dept:{
+            dno,dname
+        }
+     }=emp;
+     //printing values of variable dno,dname
+     console.log(dno,dname)
+
+
+   </script> 
+</body>
+</html>

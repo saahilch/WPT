@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr=[1,2,3,4];
+        arr1=[10,20,arr]
+        //create a copy of arr into arr3, ... it is spread operator
+        arr3=[5,6,...arr]
+        console.log(arr1,arr1.length);
+        arr.push(100)
+        console.log(arr1,arr1.length);
+        console.log(arr3,arr3.length);
+
+        /*x=arr[0];
+        y=arr[1];*/
+        //instead of 4 lines you may separate array elements into variables
+        //by using destructuring
+        [x,y,z,p]=arr;  //destucturing of array
+        console.log(x,y,z,p);
+        [x1,y1,...p1]=arr;
+        [,,c,...p2]=arr;
+    </script>
+</body>
+</html>

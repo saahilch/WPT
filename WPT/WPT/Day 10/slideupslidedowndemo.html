@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: cyan;
+            border:2px solid red;
+            border-radius: 20px;
+            height:300px;
+            width:300px;
+            margin:10px
+        }
+    </style>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+              $('#slideup').click(function(){
+                  $("#div1").slideUp(1000,function(){
+                    console.log("slideup div1 completed")
+                  }) 
+                  $("#div2").slideDown(1000,function(){
+                    console.log("slidedown div2  completed")
+                  })   
+              })
+              $('#slidedown').click(function(){
+                  $("#div1").slideDown(1000,function(){
+                    console.log("slidedown div1 completed")
+                  }) 
+                  $("#div2").slideUp(1000,function(){
+                    console.log("slideup div2  completed")
+                  })   
+              }) 
+              $('#slidetoggle').click(function(){
+                  $("#div1").slideToggle(1000,function(){
+                    console.log("slidetoggle div1 completed")
+                  }) 
+                  $("#div2").slideToggle(1000,function(){
+                    console.log("slidetoggle div2  completed")
+                  })   
+              }) 
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="slideup" id="slideup" value="slideup">slideup</button>
+
+    <button type="button" name="slidedown" id="slidedown" value="slidedown">slidedown</button>
+    <button type="button" name="slidetoggle" id="slidetoggle" value="slidetoggle">slidetoggle</button><br/>
+    <div id="div1">
+        This is div1
+        <img src="../images/flowers.png" height="200px" width="200px"></img>
+    </div>
+    <div id="div2">
+        This is div2
+       
+    </div>
+
+</body>
+</html>

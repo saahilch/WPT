@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //to create a object
+        var ob={pid:11,pname:"lays",qty:12,price:23};
+        var p="qty"
+        alert(ob.pid+"  "+ob.pname+"  "+ob[p]);
+
+        //constructor function
+        var product=function(pid,pname,qty,price){
+            this.pid=pid;
+            this.pname=pname;
+            this.qty=qty;
+            this.price=price;
+            this.display=function(){
+                document.write(`PID : ${this.pid} pname: ${this.pname} qty: ${this.qty} price: ${this.price}`);
+            }
+        }
+        var p1=new product(11,'xxx',34,45);
+        p1.display();
+        p1.make="yyyy";
+        p1.model="hsdghfg";
+        //for loop for object
+        for(var p in p1){
+            document.write(`${p} ----> ${p1[p]}` )
+        }
+
+        var p2=new product(12,"dddd",56,78);
+        p2.display();
+
+        var Person=function(pid,nm){
+            this.id=pid;
+            this.name=nm;
+        }
+        var Employee=function(dept,desg){
+            this.dept=dept;
+            this.desg=desg;
+        }
+        p11=new Person(12,"xxx");
+        e11=new Employee("hr","mgr");
+        //to make p11 as parent of e11
+        e11.__proto__=p11;
+        for(var p in e11){
+            if(e11.hasOwnProperty(p)){
+                document.write("<br/>"+"Own proprty "+ e11[p])
+            }
+            else{
+                document.write("<br/>"+"parent proprty "+ e11[p])
+            }
+        }
+
+    </script>
+</body>
+</html>

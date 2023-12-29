@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function findposition(){
+            //check whetehr browser supports navigation
+            if(navigator.geolocation){
+                //it will give you the lattitude and longitude of current location
+                //instead if you use watchPostion, it will give you live location
+                navigator.geolocation.getCurrentPosition(showposition,showerror);
+                console.log("after geolocation call");
+            }
+        }
+        //callback function which gets called once getCuurentPosition is completed successfully
+        //the data it gathered will be send to showposition via position object
+        function showposition(position){
+            document.getElementById("myp").innerHTML="Lattitude: "+position.coords.latitude+"   Longitude : "+position.coords.longitude;
+
+        }
+        //callback function which gets called once getCuurentPosition is completed unsuccessfully
+        function showerror(error){
+           document.getElementById("myp").innerHTML="error occured"+error; 
+           console.log(error);
+        }
+    </script>
+</head>
+<body>
+    <h3>This is geolocation demo click the button to see the position</h3>
+    <button type="button" name="btn" id="btn" value="find" onclick="findposition()">find position</button>
+    <p id="myp"></p>
+</body>
+</html>

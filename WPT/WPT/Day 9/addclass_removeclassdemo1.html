@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myclass{
+            display:none;
+        }
+        .myc{
+            display:block;
+        }
+    </style>
+    <script src="./jquery.js"></script>
+    <script>
+        function validateData(id,errid){
+            var v=$('#'+id).val();
+            if(v==="" || v.trim().length<=0){
+                $('#'+errid).html("data cannot be empty");
+                return false;
+            }
+            else{
+                $('#'+errid).html("");
+                return true;
+            }
+        }
+        $(document).ready(function(){
+            $('#show').change(function(){
+                flag=validateData("nm","errnm")
+                flag1=validateData("addr","erraddr");
+                if(flag && flag1){
+                    //if($('#show').prop('checked','true'))
+                    if($('#show').is(':checked')){
+                        $('#courses').removeClass("myclass");
+                        $('#courses').addClass("myc");
+                    }else{
+                        $('#courses').removeClass("myc");
+                        $('#courses').addClass("myclass");
+                    }
+                }
+            });
+            $('#displaybtn').click(function(){
+                var nm=$('#nm').val();
+                var addr=$('#addr').val();
+                var course=$("input[name='course']:checked").val();
+                alert(nm+ " , "+addr+" , "+course);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <label>Name : </label> <input type="text" name="nm" id="nm"><span id="errnm"></span><br/>
+        <label>Address : </label> <input type="text" name="addr" id="addr"><span id="erraddr"></span> <br/>
+        <input type="checkbox" name="showcourses" id="show" value="show"><label for="show">Show courses</label>
+    </div>
+    <div id="courses" class="myclass">
+        <p>select course and click on show button to see the selected data</p>
+        <input type="radio" name="course" id="java" value="java"><label for="java">Java</label>
+        <input type="radio" name="course" id="C++" value="C++"><label for="C++">C++</label>
+        <input type="radio" name="course" id="Python" value="Python"><label for="Python">Python</label>
+        <input type="radio" name="course" id="DBMS" value="DBMS"><label for="DBMS">DBMS</label><br/>
+        <button type="button" name="btn" id="displaybtn" value="show">display data</button>
+    </div>
+</body>
+</html>

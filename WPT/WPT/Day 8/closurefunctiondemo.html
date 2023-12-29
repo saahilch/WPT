@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //recurssive function because it calls itself within a function
+        function add(n){
+            if(n===1){
+                return 1;
+            }else{
+                return n+add(n-1)
+            }
+        }
+        //self calling function without parameter
+        (function(){
+            alert("hello");
+        })();
+        var arr;
+        //self calling function which calls itself,with parameter
+        //it gets executed only once
+        (function(x,y){
+            alert("hello"+x+"   "+y);
+        })(10,12)
+        
+        function combinationnum(n,r){
+             var x=10;
+            //closure function
+            //a function which has access to its parent scope 
+            //variables is called as closure function
+            function factorial(num){
+                f=1; 
+                for(var i=1;i<=num;i++){
+                    f=f*i;
+                }
+                console.log(x);
+               return f;
+            }
+            var nfact=factorial(n);
+            var nrfact=factorial(n-r);
+            //factorial of n-r
+            
+           return nfact/nrfact;
+
+        }
+    </script>
+</body>
+</html>

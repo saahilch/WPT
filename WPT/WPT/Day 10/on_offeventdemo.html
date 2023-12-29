@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#assign').click(function(){
+                //assign focus event to textbox
+                $("input[type='text']").on("focus",function(){
+                    $(this).css({"background-color":"yellow",
+                    "border":"2px solid red"})
+                })
+                //assign blur event to textbox
+                $("input[type='text']").on("blur",function(){
+                    $(this).css({"background-color":"white",
+                    "border":"2px solid black"})
+                    
+                })
+              
+
+            })
+            $('#remove').click(function(){
+                //remove focus and blur event from  textbox
+                $("input[type='text']").off("focus")
+                $("input[type='text']").off("blur")
+              
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="assign" id="assign" value="assign">Assign event</button>
+    <button type="button" name="remove" id="remove" value="remove">Remove event</button><br/>
+    Name : <input type="text" name="nm" id="nm"><br/>
+    Address : <input type="text" name="nm" id="nm">
+</body>
+</html>

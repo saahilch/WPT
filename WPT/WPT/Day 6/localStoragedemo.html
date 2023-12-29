@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //var count=0;
+        const increament=function(){
+              if(localStorage.count!==undefined){
+                //localStorage.count=parseInt(localStorage.count)+1;
+                var newval=parseInt(localStorage.getItem("count"))+1;
+                localStorage.setItem("count",newval);
+              }
+              else{
+                //localStorage.count=1;
+                localStorage.setItem("count","1");
+              }
+              
+              document.getElementById("myp").innerHTML=`You clicked :    ${localStorage.count} times `;
+        }
+        const decreament=function(){
+            if(localStorage.count!==undefined && localStorage.count>=1){
+                //localStorage.count=parseInt(localStorage.count)+1;
+                var newval=parseInt(localStorage.getItem("count"))-1;
+                localStorage.setItem("count",newval);
+              }
+              else{
+                //localStorage.count=0;
+                localStorage.setItem("count","0");
+              }
+              document.getElementById("myp").innerHTML=`You clicked :    ${localStorage.count} times `;
+        }
+        const resetcounter=function(){
+                          
+                localStorage.setItem("count",0);
+                document.getElementById("myp").innerHTML=`You clicked :    ${localStorage.count} times `;
+        }
+        
+    </script>
+</head>
+<body>
+
+   <button type="button" name="btn" id="inc" value="inc" onclick="increament()">increament counter</button>
+   <button type="button" name="btn" id="dec" value="dec" onclick="decreament()">decreament counter</button> 
+   <button type="button" name="btn" id="reset" value="reset" onclick="resetcounter()">reset counter</button>
+   <p id="myp"></p>
+</body>
+</html>

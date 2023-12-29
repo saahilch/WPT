@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myclass{
+            display:none;
+        }
+        .myc{
+            display:block;
+        }
+    </style>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#show').click(function(){
+                $('p').addClass('myc');
+                $('p').removeClass('myclass')
+            })
+            $('#hide').click(function(){
+                $('p').addClass('myclass');
+                $('p').removeClass('myc');
+            })
+            $('#toggle').click(function(){
+                $('p').toggleClass('myclass');
+                $('p').toggleClass('myc');
+            })
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="show">Show para</button>
+    <button type="button" name="btn" id="hide">hide para</button>
+    <button type="button" name="btn" id="toggle">toggle para</button>
+    <p class="myclass">This is para</p>
+</body>
+</html>

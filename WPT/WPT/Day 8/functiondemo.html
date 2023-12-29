@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function myfunction(x,y,...arr){
+            console.log(arguments)
+
+    }
+    //rest parameter is used to accept 
+    //variable number of parameters to a function
+    var f1=(x,y,...arr)=>{
+        console.log(x,y,arr,arr.length)
+    }
+
+    myfunction(1,2,3,4,5,6)
+    f1(12,13,3,4,5,6)
+    </script>
+</body>
+</html>
+
+

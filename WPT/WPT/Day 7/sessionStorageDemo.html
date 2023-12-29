@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function incrementCounter(){
+            if(typeof(Storage)!==undefined){
+                if(sessionStorage.count!==undefined){
+                    sessionStorage.count=parseInt(sessionStorage.count)+1
+                }else{
+                    sessionStorage.count=1;
+                }
+                document.getElementById("myp").innerHTML=`you clicked    ${sessionStorage.count} times`
+            }
+            //sessionStorage.removeItem("count")  //delete count property
+
+        }
+    </script>
+</head>
+<body>
+    <p id="myp"></p>
+    <button type="button" name="btn" id="btn" value="add" onclick="incrementCounter()">increment</button>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //since the given object is constatnt, you may use it as enum
+        //the value of every property has to be either number or string
+        const coffee={
+            Small:'small',
+            Medium:'medium',
+            Large:'large'
+        }
+        var s=coffee.Small;
+        alert(s===coffee.Small);
+        //navigate through enum
+        for(var p in coffee){
+            document.write(p+"--->"+coffee[p])
+        }
+    </script>
+</body>
+</html>

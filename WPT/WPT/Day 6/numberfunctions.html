@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //false since it contains all digits
+        document.write("IsNAN : "+isNaN("12345")+"<br/>"); //false
+         //true since it contains atleast one character
+        document.write("isNaN: "+isNaN("a12345")+"<br/>"); //true
+        //true since it contains all digits
+        document.write("IsFinite : "+isFinite("12345")+"<br/>"); //true
+        //false since it contains one alphabet
+        document.write("isFinite: "+isFinite("a12345")+"<br/>"); //false
+        //number of digits after decimal point
+        document.write("toFixed : "+(10/3).toFixed(2)+"<br/>"); 
+        //total 4 digits will be shown
+        document.write("toprecision: "+(10/3).toPrecision(4)+"<br/>"); 
+    </script>
+</body>
+</html>

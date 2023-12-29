@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: cyan;
+            border:2px solid red;
+            border-radius: 20px;
+            height:300px;
+            width:300px;
+            margin:10px
+        }
+    </style>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+              $('#show').click(function(){
+                  $("#div1").show(1000,function(){
+                    console.log("show div1 completed")
+                  }) 
+                  $("#div2").hide(1000,function(){
+                    console.log("hide div2  completed")
+                  })   
+              })
+              $('#hide').click(function(){
+                  $("#div1").hide(1000,function(){
+                    console.log("hide div1 completed")
+                  }) 
+                  $("#div2").show(1000,function(){
+                    console.log("show div2  completed")
+                  })   
+              }) 
+              $('#toggle').click(function(){
+                  $("#div1").toggle(1000,function(){
+                    console.log("hide div1 completed")
+                  }) 
+                  $("#div2").toggle(1000,function(){
+                    console.log("show div2  completed")
+                  })   
+              }) 
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="show" id="show" value="show">Show</button>
+
+    <button type="button" name="hide" id="hide" value="hide">hide</button>
+    <button type="button" name="toggle" id="toggle" value="toggle">toggle</button><br/>
+    <div id="div1">
+        This is div1
+        <img src="../images/flowers.png" height="200px" width="200px"></img>
+    </div>
+    <div id="div2">
+        This is div2
+       
+    </div>
+
+</body>
+</html>

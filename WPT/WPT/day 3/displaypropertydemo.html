@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- assign style to div tag
+assign background color, boder, gap between 
+2 divs should be 10px , gap between text and border should be 20 px-->
+<style>
+    div{
+        background-color: aquamarine;
+        border:2px solid red;
+        /*border-width:2px;
+        border-style:solid;
+        border-color:red;*/
+        margin:5px;
+        padding:20px;
+        width:300px;
+        height:200px;
+    }
+    .myclass{
+        display:block;
+    }
+    .myc{
+        /* it hides the element, but removes its space */
+        /*display:none;*/
+        /* it hides the element, but keep its space */
+        visibility:hidden;
+    }
+    #myp{
+        /* it adds p along with padding*/
+        /*display:inline-block;*/
+        /* it adds p without padding */
+        display:inline;
+
+    }
+</style>
+</head>
+
+
+<body>
+    <div>
+        <h3>This is div 1</h3>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. <p id="myp">This is p</p>Debitis, praesentium non? Consectetur sapiente consequuntur porro, optio atque molestiae quo inventore sit repudiandae at ullam explicabo in beatae necessitatibus similique ducimus.
+    </div>
+    <div id="mydiv" class="myc">
+        <h3>This is div 2</h3>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, praesentium non? Consectetur sapiente consequuntur porro, optio atque molestiae quo inventore sit repudiandae at ullam explicabo in beatae necessitatibus similique ducimus.
+    </div>
+    <div>
+        <h3>This is div 3</h3>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima autem velit amet optio deleniti impedit harum, obcaecati ratione esse commodi repellat nostrum maiores officia saepe alias similique et enim recusandae?
+    </div>
+</body>
+</html>

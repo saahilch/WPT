@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ob={id:12,name:"ahdfjh"};
+        alert(ob.id+","+ob.name)
+        //to convert javascript objet in JSON format
+        jsonob=JSON.stringify(ob);
+        alert(jsonob);
+
+        //convert JSON object into Javascript object 
+        ob1=JSON.parse(jsonob);
+        alert(ob1);
+
+    </script>
+</body>
+</html>

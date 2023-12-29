@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <script>
+        //function to display checkboxes dynamically
+        function displaytickets(){
+            //designing checkbox
+            var check="<input type='checkbox' name='ticket' id='test'>";
+            //adding 10 checkboxes
+            for(var i=1;i<=10;i++){
+                $('#mydiv').append(check);
+                //adding id and value attributes to each checkbox
+                $('#test').attr({"id":i,
+                            "value":i})
+                                    // <label for="1">1</label>
+                //adding label beside checkbox
+                $('#mydiv').append('<label for="'+i+'">'+i+'</label>');
+                //after every 4 checkboxes the remaining will be shifted 
+                //on the next line
+                if(i%4==0){
+                    $('#mydiv').append("<br/>")
+                }
+                        
+            }     
+
+        }
+        $(document).ready(function(){
+            tickets=[];
+           displaytickets();
+           //when the status of any checkbox changes this function 
+           //will be called
+           $('input[name="ticket"]').change(function(){
+                 //if the checkbox is checked then add it in the array
+                  if($(this).is(':checked')){
+                      tickets.push($(this).val());
+                  }else{
+                    //if checkbox is unchecked, then remove it from the array
+                    var pos=tickets.indexOf($(this).val());
+                    if(pos!=-1){
+                        tickets.splice(pos,1);
+                    }
+                  }
+                  console.log(tickets);
+           });
+           $("#btn").click(function(){
+               //display all values from the tickets array into p tag
+               $('#myp').html("tickets: "+tickets);
+           })
+        })
+    </script>
+</head>
+<body>
+    <div id="mydiv">
+
+    </div>
+    <button type="button" name="btn" id="btn" value="show">show booking</button>
+    <p id="myp"></p>
+</body>
+</html>

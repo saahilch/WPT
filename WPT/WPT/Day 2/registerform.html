@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label for="name">Name : </label></td>
+                <td><input type="text" name="name" id="name" required minlength="3" maxlength="8"  autofocus placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td><label for="em">Email</label></td>
+                <td><input type="email" name="em" id="em" required placeholder="Enter email"/></td>
+            </tr>
+            <tr>
+                <td><label for="age">Age</label></td>
+                <td><input type="number" name="age" id="age" min="18" max="60" required placeholder="Enter age"/></td>
+            </tr>
+            <tr>
+                <td><label for="address">Address</label></td>
+                <td><textarea name="address" id="address" rows="5" cols="20" placeholder="Enter address"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="dt">Date of Birth</label></td>
+                <td><input type="date" name="dt" id="dt" 
+                    min="2023-11-05" max="2023-11-29"/></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender</label></td>
+                <td><input type="radio" name="gender" id="male" value="male" checked/><label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female"/><label for="female">Female</label></td>
+            </tr>
+            <tr>
+                <td><label for="degree">Degree</label></td>
+                <td><input type="radio" name="degree" id="btech" value="btech" checked/><label for="btech">btech</label>
+                <input type="radio" name="degree" id="MTech" value="MTech"/><label for="MTech">MTech</label>
+                <input type="radio" name="degree" id="PHD" value="PHD"/><label for="PHD">PHD</label>
+            </td>
+            </tr>
+            <tr>
+                <td><label for="Hobbies">Hobbies : </label></td>
+                <td><input type="checkbox" name="hobbies" id="Reading" value="Reading" checked/><label for="Reading">Reading</label>
+                <input type="checkbox" name="hobbies" id="Biking" value="Biking"/><label for="Biking">Biking</label>
+                <input type="checkbox" name="hobbies" id="Trekking" value="Trekking"/><label for="Trekking">Trekking</label><br/>
+                <input type="checkbox" name="hobbies" id="Dancing" value="Dancing" checked/><label for="Dancing">Dancing</label>
+                <input type="checkbox" name="hobbies" id="Eating" value="Eating"/><label for="Eating">Eating</label>
+                <input type="checkbox" name="hobbies" id="Sleeping"/><label for="Sleeping">Sleeping</label>
+            </td>
+            </tr>
+            <tr>
+                <td><label>City : </label></td>
+                <td>
+                    <select id="city" name="city">
+                        <option value="test">----select one ----</option>                    <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="UP">UP</option>
+    
+                    </select>
+                </td>
+                
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" name="btn" 
+                    id="register" value="register">Register me</button>
+                    <button type="reset" name="btn" 
+                    id="cancel" value="cancel">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

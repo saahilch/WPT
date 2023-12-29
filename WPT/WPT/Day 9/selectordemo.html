@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(()=>{
+            //tag selector
+            //$('p,h1').css("color","red")
+            //seudo class selctor
+           // $('p:first-child').css("color","red")
+           //$("p:contains('IACSD')").css("color","red")
+           //tag attribute selector
+           //$("p[title]").css("color","red");
+           //$("p[title$='ing']").css("color","red");
+           //$("p[title^='b']").css("color","red");
+           //$('div p').css("border","2px solid red");
+           //selects all odd p in article, counting starts with 0;
+           $('article p:odd').css("color","blue");
+           //to add name and id attribute in image tag
+           $('img').attr({
+            "name":"flower",
+            "id":"fimg"
+           })
+        })
+    </script>
+</head>
+<body>
+    <p title="baking">This is para</p>
+    <h1>This this h1</h1>
+    <p>This is para with no title</p>
+    <div>
+        <p title="mytitle">This is inside div</p>
+        <p title="testing">This is using IACSD</p>
+        <article>
+            <p title="mytitle">This is inside div inside article 0</p>
+            <p title="testing">This is using IACSD inside article 1</p>
+            <p title="mytitle">This is inside div inside article 2</p>
+            <p title="testing">This is using IACSD inside article 3</p>
+            <p title="mytitle">This is inside div inside article 4</p>
+            <p title="testing">This is using IACSD inside article 5</p>
+        </article>
+        <img src="../images/flowers.png" height="200px" width="200px">
+    </div>
+
+</body>
+</html>

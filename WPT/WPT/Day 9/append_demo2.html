@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            var cnt=1;
+            $("#add").click(function(){
+                //create a copy of child div 
+                var v=$('#child').clone();
+                var id="child"+cnt;
+                //changing the id property of clone
+                $(v).attr("id",id);
+                cnt++;
+                //add clone after last child of parent div
+                $('#parent').append(v);
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="parent">
+        <button type="button" name="btn" id="add" value="add">Add New</button>
+        <div id="child">
+            <label>Name :</label>
+            <input type="text" name="nm" id="nm1">
+        </div>
+        
+    </div>
+    
+</body>
+</html>

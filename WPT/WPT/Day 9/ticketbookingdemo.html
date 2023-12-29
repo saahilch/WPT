@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <script>
+        function displaytickets(){
+            var check="<input type='checkbox' name='ticket' id='test'>";
+            for(var i=1;i<=10;i++){
+                $('#mydiv').append(check);
+                $('#test').attr({"id":i,
+                            "value":i})
+                                    // <label for="1">1</label>
+                $('#mydiv').append('<label for="'+i+'">'+i+'</label>');
+                if(i%4==0){
+                    $('#mydiv').append("<br/>")
+                }
+                        
+            }     
+
+        }
+        $(document).ready(function(){
+            tickets=[];
+           displaytickets();
+           $('input[name="ticket"]').change(function(){
+                  if($(this).is(':checked')){
+                      tickets.push($(this).val());
+                  }else{
+                    var pos=tickets.indexOf($(this).val());
+                    if(pos!=-1){
+                        tickets.splice(pos,1);
+                    }
+                  }
+                  console.log(tickets);
+           });
+           $("#btn").click(function(){
+               $('#myp').html("tickets: "+tickets);
+           })
+        })
+    </script>
+</head>
+<body>
+    <div id="mydiv">
+
+    </div>
+    <button type="button" name="btn" id="btn" value="show">show booking</button>
+    <p id="myp"></p>
+</body>
+</html>
