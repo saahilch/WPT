@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/objectdemo.js"></script>
+    <script>
+        emparr = [new Employee(1, 'Omkar', '6666', 'S/D', 'IT'),
+        new Employee(2, 'Sahil', '2424', 'S/D', 'IT')];
+        function displayTable() {
+            var str = `<table border='2'><tr><th>Employee id</th><th>Name</th><th>Mobile</th><th>Department</th><th>Desigation</th></tr>`;
+            for (var emp of emparr) {
+                str += `<tr><td>${emp.id}</td><td>${emp.name}</td><td>${emp.mobile}</td><td>${emp.dept}</td><td>${emp.desig}</td></tr>`
+
+            }
+            str += "</table>";
+            document.getElementById("mydiv").innerHTML = str;
+
+        }
+        function clearform() {
+            document.getElementById("id").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("mob").value = "";
+            document.getElementById("dept").value = "";
+            document.getElementById("desig").value = "";
+            document.getElementById("id").focus ();
+        }
+        function addemp() {
+            var id = document.getElementById("id").value ;
+            var name = document.getElementById("name").value;
+            var mob = document.getElementById("mob").value ;
+            var dept = document.getElementById("dept").value ;
+            var desig=document.getElementById("desig").value;
+            var e = new Employee(id, name, mob.dept, desig);
+            emparr.push(e);
+            displayTable();
+            clearform();
+
+
+        }
+        function deleteEmployee() {
+            var id = document.getElementById("id").value;
+            var pos = emparr.findIndex(a => a.id === id);
+            if (pos !== -1) {
+                emparr.splice(pos, 1);
+                displayTable();
+                document.getElementById("id").value = "";
+                document.getElementById("id").focus();
+            } else {
+                alert('No such employee');
+            }
+            function modifyemp() {
+                var id = document.getElementById("id").value;
+                var pos = emparr.findIndex(a => a.id === id);
+                if (pos !== -1) {
+                    var newdept = prompt("enter new department")
+                    var newdesg = prompt("enter new designation")
+                    emparr[pos].dept = newdept;
+                    emparr[pos].desig = newdesg;
+                    displayTable();
+                    document.getElementById("id").value = "";
+                    document.getElementById("id").focus();
+                } else {
+                    alert("Invalid ID");
+                }
+
+            }
+
+        }
+    </script>
+</head>
+
+<body onload="displayTable()">
+    <form>
+         id:<input type="text" name="id" id="id"><br />
+         Name:<input type="text" name="name" id="name"><br />
+         Mobile:<input type="text" name="mob" id="mob"><br />
+        Department :<input type="text" name="dept" id="dept"><br />
+        Designation:<input type="text" name="desig" id="desig"><br />
+        <button type="button" name="btn" id="add" value="add" onclick="addemp()">Add Employee</button>
+        <button type="button" name="btn" id="del" value="del" onclick="deleteEmployee()">Delete Employee</button>
+        <button type="button" name="btn" id="modify" value="modify" onclick="modifyemp()">Modify Employee</button>
+        <button type="reset" name="reset" id="reset" value="reset">Cancel</button>
+    </form><br />
+    <div id="mydiv"></div>
+</body>
+
+</html>

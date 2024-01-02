@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <script src="./js/objectdemo.js"></script>
+    
     <script>
         emparr=[new Employee(1,'Swapnali','3333','hr','associate'),
     new Employee(2,'sunil','4444','admin','sr. manager')];
     function displayTable(){
-        var str=`<table border='2'><tr><th>Employee id</th><th>Name</th><th>mobile</th><th>Department</th><th>Designation</th></tr>`;
+        var str=`<table border='50'><tr><th>Id</th><th>Name</th><th>mobile</th><th>Department</th><th>Designation</th></tr>`;
             for(var emp of emparr){
                 str+=`<tr><td>${emp.id}</td><td>${emp.name}</td><td>${emp.mobile}</td><td>${emp.dept}</td><td>${emp.desg}</td></tr>`
             }
