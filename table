@@ -1,0 +1,4 @@
+.create database : nodedb
+5.create table books:
+
+    create table books(book_id int primary key,title varchar(30),author varchar(30),price double);
